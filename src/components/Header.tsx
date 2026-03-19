@@ -16,16 +16,16 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md" style={{ borderBottom: "1px solid var(--border-gold)" }}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       {/* Top bar */}
-      <div className="bg-secondary text-secondary-foreground">
+      <div>
         <div className="container mx-auto flex items-center justify-between px-4 py-1.5 text-xs font-body">
           <div className="flex items-center gap-4">
-            <a href="mailto:kleospiceherbs@gmail.com" className="flex items-center gap-1 hover:text-primary transition-colors">
+            <a href="mailto:kleospiceherbs@gmail.com" className="flex items-center gap-1 text-white/80 hover:text-white transition-colors">
               <Mail className="w-3 h-3" />
               <span className="hidden sm:inline">kleospiceherbs@gmail.com</span>
             </a>
-            <a href="tel:+27729838166" className="flex items-center gap-1 hover:text-primary transition-colors">
+            <a href="tel:+27729838166" className="flex items-center gap-1 text-white/80 hover:text-white transition-colors">
               <Phone className="w-3 h-3" />
               <span className="hidden sm:inline">+27 72 983 8166</span>
             </a>
@@ -46,7 +46,7 @@ const Header = () => {
             <a
               key={link.label}
               href={link.href}
-              className="font-body text-sm tracking-wide text-foreground hover:text-primary transition-colors duration-300"
+              className="font-body text-sm tracking-wide text-white/90 hover:text-primary transition-colors duration-300"
             >
               {link.label}
             </a>
@@ -82,7 +82,7 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden btn-min-target flex items-center justify-center text-foreground"
+            className="md:hidden btn-min-target flex items-center justify-center text-white"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

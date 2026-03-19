@@ -3,7 +3,7 @@ import heroImage from "@/assets/hero-kleo.webp";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-end overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-end overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0">
         <motion.img
@@ -15,12 +15,13 @@ const HeroSection = () => {
           transition={{ duration: 1.2, ease: [0.2, 0.8, 0.2, 1] }}
           loading="eager"
         />
-        <div className="absolute inset-0 bg-hero-gradient" />
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, hsl(156 96% 10% / 0.7) 0%, transparent 60%)" }} />
+        {/* Dark vignette overlay */}
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.7) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 30%, rgba(0,0,0,0.6) 70%, hsl(156 96% 10%) 100%)" }} />
       </div>
 
       {/* Content */}
-      <div className="relative container mx-auto px-4 pb-20 pt-40">
+      <div className="relative container mx-auto px-4 pb-20 pt-64">
         <motion.div
           className="max-w-2xl"
           initial={{ opacity: 0, y: 30 }}
@@ -35,24 +36,24 @@ const HeroSection = () => {
           >
             Time to Wow
           </motion.p>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-secondary-foreground leading-[1.1] mb-6">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.2] tracking-wide mb-6">
             The Resilience<br />
             <span className="text-gold-gradient">of Flavor.</span>
           </h1>
-          <p className="font-body text-secondary-foreground/90 text-base sm:text-lg max-w-lg mb-8 leading-relaxed">
+          <p className="font-body text-white/80 text-sm sm:text-base max-w-lg mb-8 leading-relaxed">
             Melissa Cleopatra's mission to transform the culinary landscape of South Africa, one spice at a time.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
+            <motion.a
               href="#products"
-              className="inline-flex items-center justify-center rounded-sm bg-secondary text-secondary-foreground font-body text-sm font-medium px-8 py-3 btn-min-target shadow-kleo hover:opacity-90 transition-opacity duration-300"
+              className="inline-flex items-center justify-center rounded-sm bg-kleo-sage text-white font-body text-sm font-medium px-8 py-3 btn-min-target shadow-kleo transition-all duration-300"
+              whileHover={{ y: -3, boxShadow: "0 12px 24px -8px rgba(0,0,0,0.3)" }}
             >
               Explore Collection
-            </a>
+            </motion.a>
             <a
               href="#about"
-              className="inline-flex items-center justify-center rounded-sm font-body text-sm font-medium px-8 py-3 btn-min-target text-secondary-foreground transition-colors duration-300"
-              style={{ border: "1px solid var(--border-gold-strong)" }}
+              className="inline-flex items-center justify-center rounded-sm font-body text-sm font-medium px-8 py-3 btn-min-target text-white border border-white/40 hover:border-white/70 transition-colors duration-300 bg-transparent"
             >
               Our Story
             </a>

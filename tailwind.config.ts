@@ -57,6 +57,7 @@ export default {
           cream: "hsl(var(--kleo-cream))",
           emerald: "hsl(var(--kleo-emerald))",
           deep: "hsl(var(--kleo-deep))",
+          sage: "hsl(var(--kleo-sage))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
