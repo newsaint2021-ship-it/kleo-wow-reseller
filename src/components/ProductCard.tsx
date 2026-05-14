@@ -1,6 +1,7 @@
 import { useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { Eye } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useStoreMode } from "@/hooks/useStoreMode";
 import type { Product } from "@/data/products";
 
@@ -53,7 +54,9 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
 
         {/* Content */}
         <div className="flex flex-col flex-1 p-4">
-          <h3 className="font-display text-lg text-foreground leading-tight">{product.name}</h3>
+          <Link to={`/product/${product.id}`} className="font-display text-lg text-foreground leading-tight hover:text-primary transition-colors">
+            {product.name}
+          </Link>
           <p className="font-body text-xs text-muted-foreground mt-0.5 mb-3">{product.subtitle}</p>
 
           <div className="mt-auto">
