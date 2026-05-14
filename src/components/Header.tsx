@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useStoreMode, type StoreMode } from "@/hooks/useStoreMode";
 import kleoLogo from "@/assets/kleo-logo.svg";
 
@@ -50,20 +51,20 @@ const Header = () => {
 
       {/* Main header */}
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <a href="#home" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img src={kleoLogo} alt="Kleo Spice & Herbs Logo" className="h-10 w-auto" />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
-              href={link.href}
+              to={link.href}
               className="font-body text-sm tracking-wide text-white/90 hover:text-primary transition-colors duration-300"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -117,14 +118,14 @@ const Header = () => {
           >
             <nav className="flex flex-col px-4 py-4 gap-1">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className="font-body text-base py-3 text-foreground hover:text-primary transition-colors btn-min-target"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </motion.div>
