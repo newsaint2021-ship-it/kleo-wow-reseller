@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { useStoreMode, type StoreMode } from "@/hooks/useStoreMode";
@@ -7,6 +7,14 @@ import kleoLogo from "@/assets/kleo-logo.svg";
 const Header = () => {
   const { mode, toggleMode } = useStoreMode();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const navLinks = [
     { label: "Home", href: "#home" },
@@ -16,7 +24,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-kleo-forest/80 backdrop-blur-md shadow-kleo border-b border-white/5"
+          : "bg-transparent"
+      }`}
+    >
       {/* Top bar */}
       <div>
         <div className="container mx-auto flex items-center justify-between px-4 py-1.5 text-xs font-body">
