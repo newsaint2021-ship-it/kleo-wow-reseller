@@ -10,6 +10,7 @@ import Shop from "./pages/Shop.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
+import Wholesale from "./pages/Wholesale.tsx";
 import Policy from "./pages/Policy.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -30,6 +31,7 @@ const App = () => {
               <Route path="/product/:id" element={<ProductDetail />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/wholesale" element={<Wholesale />} />
               <Route path="/terms" element={<Policy slug="terms" />} />
               <Route path="/privacy" element={<Policy slug="privacy" />} />
               <Route path="/shipping" element={<Policy slug="shipping" />} />
