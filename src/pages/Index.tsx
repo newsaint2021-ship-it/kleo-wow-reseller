@@ -4,7 +4,10 @@ import TrustBadges from "@/components/TrustBadges";
 import ProductGrid from "@/components/ProductGrid";
 import LifestyleStrip from "@/components/LifestyleStrip";
 import AboutSection from "@/components/AboutSection";
+import RecipeInspiration from "@/components/RecipeInspiration";
+import RestaurantPartners from "@/components/RestaurantPartners";
 import Testimonials from "@/components/Testimonials";
+import InstagramGallery from "@/components/InstagramGallery";
 import FAQ from "@/components/FAQ";
 import Newsletter from "@/components/Newsletter";
 import ContactSection from "@/components/ContactSection";
@@ -25,7 +28,10 @@ const Index = () => (
       <ProductGrid />
       <LifestyleStrip />
       <AboutSection />
+      <RecipeInspiration />
+      <RestaurantPartners />
       <Testimonials />
+      <InstagramGallery />
       <FAQ />
       <Newsletter />
       <ContactSection />
