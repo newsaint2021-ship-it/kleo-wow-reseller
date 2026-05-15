@@ -9,9 +9,15 @@ import FAQ from "@/components/FAQ";
 import Newsletter from "@/components/Newsletter";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Index = () => (
   <div className="min-h-screen bg-background">
+    <SEO
+      title="Kleo Spice & Herbs — Premium South African Spices | Time to Wow"
+      description="Cape Town–crafted spice blends and single origin herbs. From family kitchens to professional restaurants — discover Kleo's resilient flavor."
+      path="/"
+    />
     <Header />
     <main>
       <HeroSection />
