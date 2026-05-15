@@ -4,6 +4,7 @@ import { ChevronLeft } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import SEO from "@/components/SEO";
 import { products } from "@/data/products";
 import { useStoreMode } from "@/hooks/useStoreMode";
 
@@ -31,6 +32,12 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${product.name} — ${product.subtitle} | Kleo Spice & Herbs`}
+        description={`${product.name}: ${product.subtitle}. ${product.suggestions.slice(0, 2).join(", ")} and more. Crafted in Cape Town by Kleo.`}
+        path={`/product/${product.id}`}
+        type="product"
+      />
       <Header />
       <main className="pt-28 pb-20">
         <div className="container mx-auto px-4">

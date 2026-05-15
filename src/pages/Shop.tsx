@@ -1,9 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductGrid from "@/components/ProductGrid";
+import SEO from "@/components/SEO";
 
 const Shop = () => (
   <div className="min-h-screen bg-background">
+    <SEO title="Shop Spices & Herbs | Kleo Spice & Herbs" description="22 hand-finished spice blends and single origin herbs. Switch to Reseller mode for wholesale pricing." path="/shop" />
     <Header />
     <main className="pt-32">
       <div className="container mx-auto px-4 mb-6">

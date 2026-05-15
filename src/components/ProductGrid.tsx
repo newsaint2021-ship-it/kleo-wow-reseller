@@ -1,21 +1,40 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Search } from "lucide-react";
 import { products } from "@/data/products";
 import { useStoreMode } from "@/hooks/useStoreMode";
 import ProductCard from "./ProductCard";
 
 const categories = ["All", "Blends", "Single Spices", "Herbs"];
+type SortKey = "featured" | "price-asc" | "price-desc" | "name";
 
 const ProductGrid = () => {
   const { mode } = useStoreMode();
   const [activeCategory, setActiveCategory] = useState("All");
+  const [query, setQuery] = useState("");
+  const [sort, setSort] = useState<SortKey>("featured");
 
-  const filtered = activeCategory === "All" ? products : products.filter((p) => p.category === activeCategory);
+  const filtered = useMemo(() => {
+    let list = activeCategory === "All" ? products : products.filter((p) => p.category === activeCategory);
+    if (query.trim()) {
+      const q = query.toLowerCase();
+      list = list.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.subtitle.toLowerCase().includes(q) ||
+          p.ingredients.some((i) => i.toLowerCase().includes(q))
+      );
+    }
+    const priceOf = (p: typeof products[number]) => (mode === "retail" ? p.retailPrice : p.wholesalePrice);
+    if (sort === "price-asc") list = [...list].sort((a, b) => priceOf(a) - priceOf(b));
+    if (sort === "price-desc") list = [...list].sort((a, b) => priceOf(b) - priceOf(a));
+    if (sort === "name") list = [...list].sort((a, b) => a.name.localeCompare(b.name));
+    return list;
+  }, [activeCategory, query, sort, mode]);
 
   return (
     <section id="products" className="py-20">
       <div className="container mx-auto px-4">
-        {/* Wholesale banner */}
         <AnimatePresence>
           {mode === "reseller" && (
             <motion.div
@@ -33,7 +52,6 @@ const ProductGrid = () => {
           )}
         </AnimatePresence>
 
-        {/* Section header */}
         <div className="text-left mb-10">
           <p className="font-display italic text-primary text-sm mb-2">Our Collection</p>
           <h2 className="font-display text-3xl sm:text-4xl text-foreground">
@@ -44,7 +62,32 @@ const ProductGrid = () => {
           </p>
         </div>
 
-        {/* Category filter */}
+        <div className="flex flex-col lg:flex-row gap-4 mb-8">
+          <div className="relative flex-1 max-w-md">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search spices, herbs, ingredients…"
+              className="w-full bg-card border rounded-sm pl-10 pr-3 py-2.5 font-body text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-1 focus:ring-primary transition"
+              style={{ borderColor: "var(--border-gold)" }}
+            />
+          </div>
+          <select
+            value={sort}
+            onChange={(e) => setSort(e.target.value as SortKey)}
+            className="bg-card border rounded-sm px-3 py-2.5 font-body text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-primary"
+            style={{ borderColor: "var(--border-gold)" }}
+            aria-label="Sort products"
+          >
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Name (A–Z)</option>
+          </select>
+        </div>
+
         <div className="flex flex-wrap gap-2 mb-10">
           {categories.map((cat) => (
             <button
@@ -61,12 +104,17 @@ const ProductGrid = () => {
           ))}
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-          {filtered.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
-        </div>
+        {filtered.length === 0 ? (
+          <div className="py-16 text-center font-body text-muted-foreground">
+            No products match your search. Try a different term.
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+            {filtered.map((product, i) => (
+              <ProductCard key={product.id} product={product} index={i} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
