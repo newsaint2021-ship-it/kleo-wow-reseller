@@ -4,6 +4,7 @@ import { Eye } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useStoreMode } from "@/hooks/useStoreMode";
 import type { Product } from "@/data/products";
+import { getProductImage } from "@/lib/productImages";
 
 const QuickViewModal = lazy(() => import("./QuickViewModal"));
 
@@ -28,11 +29,25 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.4, delay: index * 0.04, ease: [0.2, 0.8, 0.2, 1] }}
       >
-        {/* Image placeholder */}
+        {/* Image */}
         <div className="relative aspect-square bg-muted overflow-hidden">
-          <div className="w-full h-full flex items-center justify-center bg-muted">
-            <span className="font-display text-muted-foreground/40 text-sm italic">Image Coming Soon</span>
-          </div>
+          {(() => {
+            const img = getProductImage(product.name);
+            return img ? (
+              <img
+                src={img}
+                alt={`${product.name} — ${product.subtitle}`}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-muted">
+                <span className="font-display text-muted-foreground/40 text-sm italic">Image Coming Soon</span>
+              </div>
+            );
+          })()}
+
 
           {/* Quick view overlay */}
           <button
