@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useStoreMode, type StoreMode } from "@/hooks/useStoreMode";
+import { useStoreMode } from "@/hooks/useStoreMode";
 import kleoLogo from "@/assets/kleo-logo.svg";
 
 const Header = () => {
@@ -33,28 +33,17 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      {/* Top bar */}
-      <div>
-        <div className="container mx-auto flex items-center justify-between px-4 py-1.5 text-xs font-body">
-          <div className="flex items-center gap-4">
-            <a href="mailto:kleospiceherbs@gmail.com" className="flex items-center gap-1 text-white/80 hover:text-white transition-colors">
-              <Mail className="w-3 h-3" />
-              <span className="hidden sm:inline">kleospiceherbs@gmail.com</span>
-            </a>
-            <a href="tel:+27729838166" className="flex items-center gap-1 text-white/80 hover:text-white transition-colors">
-              <Phone className="w-3 h-3" />
-              <span className="hidden sm:inline">+27 72 983 8166</span>
-            </a>
-          </div>
-          <span className="font-display italic text-primary text-xs">Time to Wow</span>
-        </div>
-      </div>
-
       {/* Main header */}
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={kleoLogo} alt="Kleo Spice & Herbs Logo" className="h-10 w-auto" />
+      <div className="container mx-auto flex items-center justify-between px-4 py-4">
+        <Link
+          to="/"
+          className="flex items-center gap-2 rounded-md px-2 py-1 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-colors"
+          style={{ border: "1px solid var(--border-gold)" }}
+          aria-label="Kleo Spice & Herbs — Home"
+        >
+          <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-10 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" style={{ mixBlendMode: "screen" }} />
         </Link>
+
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
