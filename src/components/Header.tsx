@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useStoreMode } from "@/hooks/useStoreMode";
-import kleoLogo from "@/assets/kleo-logo.svg";
+
 
 const Header = () => {
   const { mode, toggleMode } = useStoreMode();
@@ -37,12 +37,33 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link
           to="/"
-          className="flex items-center gap-2 rounded-md px-2 py-1 backdrop-blur-md bg-white/5 hover:bg-white/10 transition-colors"
-          style={{ border: "1px solid var(--border-gold)" }}
+          className="flex items-center gap-3 group"
           aria-label="Kleo Spice & Herbs — Home"
         >
-          <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-10 w-auto drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]" style={{ mixBlendMode: "screen" }} />
+          {/* Fan/leaf mark in gold */}
+          <span
+            className="flex items-center justify-center h-10 w-10 rounded-full backdrop-blur-md"
+            style={{
+              background: "rgba(255,255,255,0.06)",
+              border: "1px solid var(--border-gold-strong)",
+            }}
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ color: "hsl(var(--kleo-gold))" }}>
+              <path d="M12 21c0-6 3-10 9-12-2 6-5 10-9 12Z" />
+              <path d="M12 21c0-6-3-10-9-12 2 6 5 10 9 12Z" />
+              <path d="M12 21V9" />
+            </svg>
+          </span>
+          <span className="flex flex-col leading-none">
+            <span className="font-display text-xl tracking-wide text-gold-gradient drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">
+              Kleo
+            </span>
+            <span className="font-body text-[10px] tracking-[0.25em] uppercase text-white/70">
+              Spice &amp; Herbs
+            </span>
+          </span>
         </Link>
+
 
 
         {/* Desktop nav */}
