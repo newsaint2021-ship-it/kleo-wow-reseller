@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import slide1 from "@/assets/hero/slide-1-meat.jpg";
-import slide2 from "@/assets/hero/slide-2-family.jpg";
-import slide3 from "@/assets/hero/slide-3-chef.jpg";
-import slide4 from "@/assets/hero/slide-4-dining.jpg";
+import slide1 from "@/assets/hero-screen/hero-1.jpg";
+import slide2 from "@/assets/hero-screen/hero-2.jpg";
+import slide3 from "@/assets/hero-screen/hero-3.jpg";
+import slide4 from "@/assets/hero-screen/hero-4.jpg";
 
 const recipes = [
   { img: slide1, tag: "Sunday Roast", title: "Slow-Roasted Lamb with Rosemary & Garlic", time: "3h 20m" },
