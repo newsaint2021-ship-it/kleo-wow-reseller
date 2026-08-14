@@ -44,7 +44,8 @@ const Header = () => {
           <img
             src={kleoLogo}
             alt="Kleo Spice & Herbs"
-            className="h-11 sm:h-14 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] transition-transform duration-500 group-hover:scale-[1.03]"
+            className="h-11 sm:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+            style={{ mixBlendMode: "screen" }}
           />
         </Link>
 
@@ -112,7 +113,7 @@ const Header = () => {
             style={{ borderTop: "1px solid var(--border-gold)" }}
           >
             <div className="px-4 pt-5 pb-2">
-              <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-12 w-auto object-contain" />
+              <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-12 w-auto object-contain rounded-sm" />
             </div>
             <nav className="flex flex-col px-4 pb-4 gap-1">
               {navLinks.map((link) => (
