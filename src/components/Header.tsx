@@ -37,31 +37,14 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link
           to="/"
-          className="flex items-center gap-3 group"
+          className="flex items-center group btn-min-target"
           aria-label="Kleo Spice & Herbs — Home"
         >
-          {/* Fan/leaf mark in gold */}
-          <span
-            className="flex items-center justify-center h-10 w-10 rounded-full backdrop-blur-md"
-            style={{
-              background: "rgba(255,255,255,0.06)",
-              border: "1px solid var(--border-gold-strong)",
-            }}
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ color: "hsl(var(--kleo-gold))" }}>
-              <path d="M12 21c0-6 3-10 9-12-2 6-5 10-9 12Z" />
-              <path d="M12 21c0-6-3-10-9-12 2 6 5 10 9 12Z" />
-              <path d="M12 21V9" />
-            </svg>
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-xl tracking-wide text-gold-gradient drop-shadow-[0_2px_8px_rgba(0,0,0,0.55)]">
-              Kleo
-            </span>
-            <span className="font-body text-[10px] tracking-[0.25em] uppercase text-white/70">
-              Spice &amp; Herbs
-            </span>
-          </span>
+          <img
+            src={kleoLogo}
+            alt="Kleo Spice & Herbs"
+            className="h-11 sm:h-14 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.45)] transition-transform duration-500 group-hover:scale-[1.03]"
+          />
         </Link>
 
 
