@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import kleoLogo from "@/assets/kleo-logo.svg";
+import kleoLogo from "@/assets/kleo-logo-official.png";
 
 const Footer = () => {
   return (
