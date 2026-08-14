@@ -32,7 +32,7 @@ const ProductCard = ({ product, index }: ProductCardProps) => {
         {/* Image */}
         <div className="relative aspect-square bg-muted overflow-hidden">
           {(() => {
-            const img = getProductImage(product.name);
+            const img = getProductImage(product.imageSlug ?? product.name);
             return img ? (
               <img
                 src={img}
