@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ProductGrid from "@/components/ProductGrid";
 import TrustBadges from "@/components/TrustBadges";
 import LifestyleStrip from "@/components/LifestyleStrip";
 import AboutSection from "@/components/AboutSection";
@@ -25,6 +26,7 @@ const Index = () => (
       <HeroSection />
       <TrustBadges />
       <LifestyleStrip />
+      <ProductGrid />
       <AboutSection />
       <RecipeInspiration />
       <RestaurantPartners />
