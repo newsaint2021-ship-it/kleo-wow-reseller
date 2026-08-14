@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import kleoLogo from "@/assets/kleo-logo.svg";
+import kleoLogo from "@/assets/kleo-logo-official.png";
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <div className="col-span-2">
-            <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-8 w-auto mb-4 brightness-0 invert" />
+            <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-16 w-auto object-contain mb-5" style={{ mixBlendMode: "screen" }} />
             <p className="font-body text-sm text-secondary-foreground/70 text-left leading-relaxed max-w-xs">
               From resilience to excellence. Premium spices and herbs, crafted in Cape Town with Zimbabwean heritage.
             </p>
