@@ -111,7 +111,10 @@ const Header = () => {
             className="md:hidden overflow-hidden bg-background"
             style={{ borderTop: "1px solid var(--border-gold)" }}
           >
-            <nav className="flex flex-col px-4 py-4 gap-1">
+            <div className="px-4 pt-5 pb-2">
+              <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-12 w-auto object-contain" />
+            </div>
+            <nav className="flex flex-col px-4 pb-4 gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
