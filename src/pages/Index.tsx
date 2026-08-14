@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import TrustBadges from "@/components/TrustBadges";
-import ProductGrid from "@/components/ProductGrid";
 import LifestyleStrip from "@/components/LifestyleStrip";
 import AboutSection from "@/components/AboutSection";
 import RecipeInspiration from "@/components/RecipeInspiration";
@@ -25,7 +24,6 @@ const Index = () => (
     <main>
       <HeroSection />
       <TrustBadges />
-      <ProductGrid />
       <LifestyleStrip />
       <AboutSection />
       <RecipeInspiration />
