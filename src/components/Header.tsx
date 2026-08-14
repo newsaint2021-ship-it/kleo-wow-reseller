@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useStoreMode } from "@/hooks/useStoreMode";
+import kleoLogo from "@/assets/kleo-logo-official.png";
 
 
 const Header = () => {
