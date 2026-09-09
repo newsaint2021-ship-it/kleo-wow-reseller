@@ -14,23 +14,27 @@ const AboutSection = () => {
           >
             <p className="font-display italic text-primary text-sm mb-2">Our Story</p>
             <h2 className="font-display text-3xl sm:text-4xl text-foreground mb-6">
-              Empowerment<br />
-              <span className="text-gold-gradient">Through Flavor</span>
+              From Resilience<br />
+              <span className="text-gold-gradient">To Flavour</span>
             </h2>
             <div className="space-y-4 font-body text-muted-foreground text-left leading-relaxed">
               <p>
-                Melissa Cleopatra — known to everyone as Kleo — arrived in Cape Town from Zimbabwe with nothing but a suitcase of hand-ground spices and an unbreakable will. In a city that didn't know her name, she built a reputation one kitchen at a time.
+                Kleo Spice &amp; Herbs was born from a simple belief: exceptional flavour can transform an ordinary meal into a memorable experience.
               </p>
               <p>
-                Kleo Spice & Herbs was born from the intersection of survival and mastery. Every blend in our collection carries the memory of Melissa's grandmother's kitchen in Harare, refined through years of professional culinary work in Cape Town's most demanding restaurants.
+                At the heart of Kleo is Melissa Cleopatra — an entrepreneur who turned personal challenges into a pursuit of excellence. Rather than allowing difficult circumstances to define her journey, she chose to build something meaningful: a brand centred around quality, flavour, creativity and opportunity.
               </p>
               <p>
-                Today, Kleo stands as more than a spice brand. It is a symbol of what happens when resilience meets craft — when the struggle against poverty transforms into a mission of culinary excellence. Every jar is a declaration: that heritage is power, that flavor is a language, and that excellence is non-negotiable.
+                Kleo represents that transformation. Every blend and every spice is carefully selected with one purpose — to help people create food worth remembering.
+              </p>
+              <p>
+                Because food is more than something we eat. It brings people together. It creates memories. It turns a table into a gathering. It gives a chef confidence. It gives a home cook the ability to create something extraordinary.
               </p>
               <p className="text-foreground font-medium">
-                Our mission is poverty alleviation through premium quality. We believe that when you elevate the product, you elevate the person behind it.
+                This is what Kleo means by Empowerment Through Flavor. Every jar represents resilience, professional grit and the belief that quality can come from anywhere — making great flavour accessible while building a brand founded on quality, ambition and purpose. Time to Wow.
               </p>
             </div>
+
           </motion.div>
 
           {/* Visual element */}
