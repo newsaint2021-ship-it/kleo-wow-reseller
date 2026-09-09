@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const partners = [
   "Sea Point Bistro",
-  "Harare Kitchen",
+  "Heritage Kitchen",
   "Table Bay Grill",
   "Kalk Bay Smoke",
   "Cape Spice Co.",

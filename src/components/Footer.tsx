@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="col-span-2">
             <img src={kleoLogo} alt="Kleo Spice & Herbs" className="h-16 w-auto object-contain mb-5" style={{ mixBlendMode: "screen" }} />
             <p className="font-body text-sm text-secondary-foreground/70 text-left leading-relaxed max-w-xs">
-              From resilience to excellence. Premium spices and herbs, crafted in Cape Town with Zimbabwean heritage.
+              From resilience to excellence. Premium spices and herbs, crafted in Cape Town with a commitment to quality.
             </p>
             <p className="font-display italic text-primary text-sm mt-3">Time to Wow</p>
           </div>
