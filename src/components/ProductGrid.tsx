@@ -4,6 +4,7 @@ import { Search } from "lucide-react";
 import { products } from "@/data/products";
 import { useStoreMode } from "@/hooks/useStoreMode";
 import ProductCard from "./ProductCard";
+import catalogueAsset from "@/assets/Kleo_Spice_Herbs_Wholesale_Catalogue.pdf.asset.json";
 
 const categories = ["All", "Blends", "Single Spices", "Herbs"];
 type SortKey = "featured" | "price-asc" | "price-desc" | "name";
@@ -48,6 +49,24 @@ const ProductGrid = () => {
               <p className="font-body text-sm text-secondary-foreground/80 max-w-2xl">
                 Competitive bulk pricing from 1kg units. Dedicated account management, consistent supply, and custom blending available for orders above 50kg. Contact us for tailored pricing.
               </p>
+              <div className="mt-5 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={catalogueAsset.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center justify-center rounded-sm bg-primary text-primary-foreground font-body text-sm font-semibold tracking-wide uppercase px-6 py-3 btn-min-target shadow-kleo hover:opacity-90 transition-opacity"
+                  style={{ minHeight: "44px" }}
+                >
+                  Download Wholesale Catalogue
+                </a>
+                <a
+                  href="https://wa.me/27729838166?text=I%27d%20like%20to%20place%20a%20Kleo%20wholesale%20order"
+                  className="inline-flex items-center justify-center rounded-sm font-body text-sm font-medium tracking-wide uppercase px-6 py-3 btn-min-target border hover:bg-secondary-foreground/10 transition-colors"
+                  style={{ minHeight: "44px", borderColor: "var(--border-gold-strong)" }}
+                >
+                  Request a Wholesale Order
+                </a>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
