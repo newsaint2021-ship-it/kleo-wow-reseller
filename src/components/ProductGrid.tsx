@@ -71,6 +71,7 @@ const ProductGrid = () => {
           )}
         </AnimatePresence>
 
+        {mode === "retail" && (<>
         <div className="text-left mb-10">
           <p className="font-display italic text-primary text-sm mb-2">Our Collection</p>
           <h2 className="font-display text-3xl sm:text-4xl text-foreground">
@@ -134,6 +135,7 @@ const ProductGrid = () => {
             ))}
           </div>
         )}
+        </>)}
       </div>
     </section>
   );
