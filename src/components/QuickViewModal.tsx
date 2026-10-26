@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useStoreMode } from "@/hooks/useStoreMode";
 import type { Product } from "@/data/products";
+import { getProductImage } from "@/lib/productImages";
 
 interface QuickViewModalProps {
   product: Product;
@@ -44,8 +45,20 @@ const QuickViewModal = ({ product, open, onClose }: QuickViewModalProps) => {
             </button>
 
             {/* Image */}
-            <div className="aspect-video bg-muted flex items-center justify-center">
-              <span className="font-display text-muted-foreground/40 italic">Image Coming Soon</span>
+            <div className="aspect-video bg-muted flex items-center justify-center overflow-hidden">
+              {(() => {
+                const img = getProductImage(product.imageSlug ?? product.name);
+                return img ? (
+                  <img
+                    src={img}
+                    alt={`${product.name} — ${product.subtitle}`}
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="font-display text-muted-foreground/40 italic">Image Coming Soon</span>
+                );
+              })()}
             </div>
 
             {/* Content */}
