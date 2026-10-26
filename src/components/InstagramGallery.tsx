@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
+import { strategic } from "@/lib/strategicImages";
 import { Instagram } from "lucide-react";
-import slide1 from "@/assets/hero-screen/hero-1.jpg";
-import slide2 from "@/assets/hero-screen/hero-2.jpg";
-import slide3 from "@/assets/hero-screen/hero-3.jpg";
-import slide4 from "@/assets/hero-screen/hero-4.jpg";
 
-const tiles = [slide1, slide3, slide2, slide4, slide3, slide1];
+const tiles = [0, 2, 4, 6, 1, 5].map(strategic);
 
 const InstagramGallery = () => (
   <section className="py-20 bg-card">
