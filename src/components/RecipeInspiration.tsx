@@ -1,14 +1,11 @@
 import { motion } from "framer-motion";
-import slide1 from "@/assets/hero-screen/hero-1.jpg";
-import slide2 from "@/assets/hero-screen/hero-2.jpg";
-import slide3 from "@/assets/hero-screen/hero-3.jpg";
-import slide4 from "@/assets/hero-screen/hero-4.jpg";
+import { strategic } from "@/lib/strategicImages";
 
 const recipes = [
-  { img: slide1, tag: "Sunday Roast", title: "Slow-Roasted Lamb with Rosemary & Garlic", time: "3h 20m" },
-  { img: slide3, tag: "Weeknight Hero", title: "Cape Malay Chicken Curry", time: "45m" },
-  { img: slide2, tag: "Family Table", title: "Grandmother's Boerewors with BBQ Spice", time: "1h 10m" },
-  { img: slide4, tag: "Restaurant Plate", title: "Pan-Seared Beef with Tellicherry Crust", time: "30m" },
+  { img: strategic(3), tag: "Sunday Roast", title: "Slow-Roasted Lamb with Rosemary & Garlic", time: "3h 20m" },
+  { img: strategic(4), tag: "Weeknight Hero", title: "Cape Malay Chicken Curry", time: "45m" },
+  { img: strategic(5), tag: "Family Table", title: "Grandmother's Boerewors with BBQ Spice", time: "1h 10m" },
+  { img: strategic(6), tag: "Restaurant Plate", title: "Pan-Seared Beef with Tellicherry Crust", time: "30m" },
 ];
 
 const RecipeInspiration = () => (

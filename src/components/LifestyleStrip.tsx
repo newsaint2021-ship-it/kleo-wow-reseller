@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
-import slide2 from "@/assets/hero-screen/hero-2.jpg";
-import slide3 from "@/assets/hero-screen/hero-3.jpg";
-import slide4 from "@/assets/hero-screen/hero-4.jpg";
+import { strategic } from "@/lib/strategicImages";
 
 const tiles = [
-  { img: slide3, label: "Restaurant Grade", caption: "Trusted by professional kitchens." },
-  { img: slide2, label: "Family First", caption: "Heritage-driven, table-ready blends." },
-  { img: slide4, label: "From Cape Town", caption: "African flavor, served worldwide." },
+  { img: strategic(0), label: "Restaurant Grade", caption: "Trusted by professional kitchens." },
+  { img: strategic(1), label: "Family First", caption: "Heritage-driven, table-ready blends." },
+  { img: strategic(2), label: "From Cape Town", caption: "African flavor, served worldwide." },
 ];
 
 const LifestyleStrip = () => (
